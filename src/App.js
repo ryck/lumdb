@@ -28,7 +28,7 @@ class App extends Component {
 
   render() {
     console.log(process.env.NODE_ENV);
-    console.log(process.env.API_KEY);
+    console.log(process.env.REACT_APP_API_KEY);
     return (
       <div className="App">
         <header className="App-header">
