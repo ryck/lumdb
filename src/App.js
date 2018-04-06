@@ -14,7 +14,9 @@ class App extends Component {
   async componentDidMount() {
     try {
       const res = await fetch(
-        `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`
+        `https://api.themoviedb.org/3/discover/movie?api_key=${
+          process.env.REACT_APP_API_KEY
+        }&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`
       );
       const movies = await res.json();
       this.setState({
@@ -27,8 +29,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(process.env.NODE_ENV);
-    console.log("REACT_APP_API_KEY", process.env.REACT_APP_API_KEY);
     return (
       <div className="App">
         <header className="App-header">
