@@ -4,8 +4,6 @@ import "./App.css";
 
 import Movie from "./Movie";
 
-const API_KEY = "5ed7a59c30a22dd13ea34a42b5984ae0";
-
 class App extends Component {
   state = {
     movies: []
