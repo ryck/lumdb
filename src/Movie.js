@@ -14,10 +14,11 @@ export default class Movie extends Component {
   };
 
   render() {
-    const { title } = this.props.movie;
+    const { title, overview } = this.props.movie;
     return (
       <div>
         <h3>{title}</h3>
+        <p>{overview}</p>
       </div>
     );
   }
