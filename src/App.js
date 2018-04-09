@@ -4,6 +4,11 @@ import "./App.css";
 
 import Movie from "./Movie";
 
+import Raven from "raven-js";
+Raven.config(
+  "https://3b2a1cee2b2342e79a1d633c61313f2e@sentry.io/1181135"
+).install();
+
 class App extends Component {
   state = {
     movies: []
