@@ -4,7 +4,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import Overdrive from "react-overdrive";
 
-const POSTER_PATH = "http://image.tmdb.org/t/p/w154";
+const POSTER_PATH = "//image.tmdb.org/t/p/w154";
 
 const Movie = ({ movie }) => (
   <Link to={`/${movie.id}`}>
