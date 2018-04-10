@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 import Overdrive from "react-overdrive";
 
 const POSTER_PATH = "//image.tmdb.org/t/p/w154";
@@ -15,12 +14,6 @@ const Movie = ({ movie }) => (
 );
 
 export default Movie;
-
-Movie.PropTypes = {
-  movie: PropTypes.shape({
-    title: PropTypes.string.isRequired
-  }).isRequired
-};
 
 export const Poster = styled.img`
   box-shadow: 0 0 35px black;

@@ -55,7 +55,8 @@ const MovieWrapper = styled.div`
   position: relative;
   padding-top: 50vh;
   background-size: cover;
-  background: url(${props => props.backdrop}) no-repeat;
+  background-image: url(${props => props.backdrop});
+  background-repeat: no-repeat;
 `;
 
 const MovieInfo = styled.div`
