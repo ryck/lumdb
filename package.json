@@ -8,6 +8,7 @@
 		"raven-js": "^3.24.0",
 		"react": "^16.3.1",
 		"react-dom": "^16.3.1",
+		"react-router-dom": "^4.2.2",
 		"react-scripts": "1.1.4"
 	},
 	"scripts": {
@@ -18,8 +19,10 @@
 		"precommit": "pretty-quick --staged"
 	},
 	"devDependencies": {
+		"eslint-config-airbnb": "^16.1.0",
 		"eslint-config-prettier": "^2.9.0",
 		"eslint-plugin-prettier": "^2.6.0",
+		"eslint-plugin-react": "^7.7.0",
 		"husky": "^0.14.3",
 		"lint-staged": "^7.0.4",
 		"prettier": "^1.11.1",

@@ -1,46 +1,32 @@
-import React, { Component } from "react";
+import React from "react";
+
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+
 import logo from "./logo.svg";
 import "./App.css";
 
-import Movie from "./Movie";
+import MoviesList from "./MoviesList";
+import MovieDetail from "./MovieDetail";
 
 import Raven from "raven-js";
 Raven.config(
   "https://3b2a1cee2b2342e79a1d633c61313f2e@sentry.io/1181135"
 ).install();
 
-class App extends Component {
-  state = {
-    movies: []
-  };
-
-  async componentDidMount() {
-    try {
-      const res = await fetch(
-        `https://api.themoviedb.org/3/discover/movie?api_key=${
-          process.env.REACT_APP_API_KEY
-        }&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`
-      );
-      const movies = await res.json();
-      this.setState({
-        movies: movies.results
-      });
-      console.log(movies);
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
+const App = () => (
+  <Router>
+    <div className="App">
+      <header className="App-header">
+        <Link to="/">
           <img src={logo} className="App-logo" alt="logo" />
-        </header>
-        {this.state.movies.map(movie => <Movie key={movie.id} movie={movie} />)}
-      </div>
-    );
-  }
-}
+        </Link>
+      </header>
+      <Switch>
+        <Route path="/" exact component={MoviesList} />
+        <Route path="/:id" component={MovieDetail} />
+      </Switch>
+    </div>
+  </Router>
+);
 
 export default App;
